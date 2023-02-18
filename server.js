@@ -1,15 +1,13 @@
 require('dotenv').config()
 
 const express = require('express')
+const path = require('path')
 const apiRoutes = require('./routes/api')
 
 const app = express()
+app.use(express.static(path.join(__dirname, 'public')))
 
 const PORT = process.env.PORT ?? 3000
-
-app.get('/', (req, res) => {
-  res.sendFile('html/index.html', { root: __dirname })
-})
 
 app.use('/api', apiRoutes)
 

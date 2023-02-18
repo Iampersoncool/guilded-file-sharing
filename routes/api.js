@@ -27,6 +27,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
         {
           title: `Image uploaded`,
           description: `A new image was uploaded: ${originalname}`,
+          color: 65280,
         },
       ],
     }
